@@ -7,7 +7,7 @@ var one = function() {
       osc(10, .1).rotate(0, -0.1), .2
     ).colorama(() => mouse.y * .0001)
   )
-  .color(() => mouse.x * .001, () => mouse.y * .01, 3.9)
+  .color(() => mouse.x * .01, () => mouse.y * .001, Math.sin(time))
   .mask(
     shape(400, .7, .3)
     //.thresh(.1)
@@ -16,7 +16,9 @@ var one = function() {
   )
     .rotate(0, () => mouse.x * 0.001)
     .kaleid(5)
+  	.rotate(0, () => mouse.x * 0.001)
     .out(o0)
 }
 
 one();
+
