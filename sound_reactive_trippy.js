@@ -2,11 +2,7 @@
 // based on modified code ctrl+opt, based on modified code by Olivia Jack
 // https://bgenchel.github.io
 
-function main(kaleid, noise_scale, mod_depth, mod_rate, pixelate, pix_params){
-  var core = osc(4, 0.1, 0.8)
-  	.color(() => a.fft[0]*10.3 - 10,() => a.fft[0]*-15.3 + 2.3, () => a.fft[0]*120.3 - 1.8)
-  	.rotate(0.10, 0.5)
-  	.pixelate(20, 30)
+function main(kaleid, noise_scale, mod_depth, mod_rate, pixelate, pix_params){ var core = osc(4, 0.1, 0.8) .color(() => a.fft[0]*10.3 - 10,() => a.fft[0]*-15.3 + 2.3, () => a.fft[0]*120.3 - 1.8) .rotate(0.10, 0.5) .pixelate(20, 30)
   	.modulate(noise(noise_scale), () => mod_depth * Math.sin(mod_rate * Math.sin(0.03 * time)))
   	.kaleid(kaleid)
   
@@ -42,7 +38,6 @@ main(kaleid, noise_scale, mod_depth, mod_rate, pixelate, pix_params)
 	// .colorama(.00001)
 	// .shift()
 	// .modulate(src(s0))
-	.color( å2, -2)
 	.out(o0)
 
 
