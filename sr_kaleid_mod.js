@@ -23,21 +23,23 @@ mod_rate = 0.25
 pixelate = false
 pix_params = {'base': 500, 'scale': 1000, 'rate': 1}
 */
-var kaleid = 2,
-    noise_scale = 10,
-    mod_depth = 1.5,
-	mod_rate = 0.25,
+var kaleid = 3,
+    noise_scale = .1
+,
+    mod_depth = 1,
+	mod_rate = 10,
     pixelate = false,
     pix_params = {'base': 50, 'scale': 2000, 'rate': 0.05}
 
-// s0.initCam()
+s0.initCam()
 main(kaleid, noise_scale, mod_depth, mod_rate, pixelate, pix_params)
+	.modulate(src(s0))
 	// .scrollX(1, 0.1)
 	// .scrollY(0.1, () => 0.001 * Math.sin(0.5 * time))
-	// .modulateKaleid(osc(1 , 0.5, 0), 10)
-	// .rotate(1, 0.5).modulateRotate(src(s0), 0.5)
-	// .posterize([1, 2, 3, 10, 8], 0.5)
+	.modulateKaleid(osc(1 , 0.5, 0), 10)
+	.rotate(1, 0.5).modulateRotate(src(s0), 0.5)
+	.posterize([1, 2, 3, 10, 8], 0.5)
 	// .colorama(.00001)
 	// .shift()
-	// .modulate(src(s0))
 	.out(o0)
+

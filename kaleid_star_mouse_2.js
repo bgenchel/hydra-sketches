@@ -1,6 +1,6 @@
 var one = function() {
   osc(10, 0.1, .4)
-  .rotate(0, 0.1)
+  .rotate(1, 0.1)
   .mult(
     osc(100, 0.25)
     .modulate(
